@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
+    <script src="js/script.js"></script>
+    <title>Générateur de VISA lavoniques</title>
+</head>
+<body onload="init()">
+    <div class="sidebar">
+        <form>
+            <label for="discord">Discord</label>
+            <input type="text" id="discord">
+            <label>Coordonnées</label>
+            <span>[<input type="text" id="coordinates_x1" class="coords">:<input type="text" id="coordinates_y1" class="coords">]</span>
+            <label for="region">Région</label>
+            <input type="text" id="region">
+            <label for="type">Type de VISA</label>
+            <select id="type">
+                <option value="temporaire">Temporaire</option>
+                <option value="infini">Infini</option>
+            </select>
+            <label for="reason">Raison</label>
+            <input type="text" name="reason" id="reason">
+            <label for="emission_city">Ville d'émission</label>
+            <input type="text" name="emission_city" id="emission_city">
+            <div class="form-buttons">
+                <button type="button" onclick="generate()">Générer</button>
+                <button type="button" onclick="save()">Sauvegarder</button>
+                <button type="button" onclick="init()">Reset</button>
+            </div>
+        </form>
+        <p>Voir <a href="https://victorbnl.github.io/lavonic-card-generator">générateur de cartes d'identité</a></p>
+    </div>
+    <div class="result-container">
+        <div>
+            <canvas id="result" width="454" height="244"></canvas>
+        </div>
+    </div>
+    <img src="assets/img/visa.jpg" id="visa_image" style="display: none;">
+</body>
+</html>
